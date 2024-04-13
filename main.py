@@ -1,6 +1,8 @@
 from adder import Add
 from autoTests import AutoTests
 from multiplier import Multiplier
+from operand import Operand
+
 
 class Main:
     def __init__(self):
@@ -15,7 +17,21 @@ class Main:
         print("4. Wyjdź z programu")
 
     def add_number(self):
-        self.adder.run()
+        operand_x = Operand()
+        operand_x.get_bin_number("X")
+
+        operand_y = Operand()
+        operand_y.get_bin_number("Y")
+
+        operand_modulo = Operand()
+        operand_modulo.get_modulo_number()
+
+        self.adder.number_x = operand_x
+        self.adder.number_y = operand_y
+        self.adder.modulo = operand_modulo
+        print("Wynik dodawania:", self.adder.get_result())
+        print("Wynik dodawania modulo:", self.adder.get_result_modulo())
+
 
     def multiply(self):
         self.multiply.run()
