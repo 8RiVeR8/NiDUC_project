@@ -77,6 +77,10 @@ class Add:
                 print("Nowa liczba jest dłuższa niż oryginalna. Wprowadź liczbę ponownie.")
 
         elif choice == 2:  # Zmiana pojedynczego bitu
+            for i in range(0, len(bin)):
+                print(i, end="")
+            print(" <- indeksy a pod nimi liczba")
+            print(bin)
             print("Podaj pozycję bitu do zmiany (0 - {}):".format(len(bin) - 1))
             position = int(input())
             if 0 <= position < len(bin):  # Sprawdzenie czy pozycja jest prawidłowa
@@ -88,19 +92,6 @@ class Add:
 
 
         return bin
-
-    # def generate_error(self, error_variable, bin_x, bin_y, wynik):
-    #     print("Chcesz zmienić całą liczbę (1) czy tylko pojedynczy bit (2)? -> (1/2):  ")
-    #     choice = int(input())
-    #     if error_variable == 1:
-    #         bin_x = self.error_change(bin_x, choice)
-    #         return bin_x
-    #     if error_variable == 2:
-    #         bin_y = self.error_change(bin_y, choice)
-    #         return bin_y
-    #     if error_variable == 3:
-    #         wynik = self.error_change(wynik, choice)
-    #         return wynik
 
     def generate_error(self, bin):
         print("Chcesz zmienić całą liczbę (1) czy tylko pojedynczy bit (2)? -> (1/2):  ")
