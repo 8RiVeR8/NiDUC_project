@@ -29,8 +29,15 @@ class Main:
         self.adder.number_x = operand_x
         self.adder.number_y = operand_y
         self.adder.modulo = operand_modulo
-        print("Wynik dodawania:", self.adder.get_result())
-        print("Wynik dodawania modulo:", self.adder.get_result_modulo())
+
+        result = self.adder.get_result()
+        result_after_modulo = self.adder.result_after_modulo(result)
+        second_result_after_modulo = self.adder.result_after_modulo_second(self.adder.get_result_modulo())
+        print("Wynik dodawania X i Y:", result)
+        print("Wynik dodawania modulo |X|A + |Y|A:", self.adder.get_result_modulo())
+        print("Wynik dodawania modulo |X + Y|A:", result_after_modulo)
+        print("Wynik dodawania ||X|A + |Y|A|: ", second_result_after_modulo)
+        self.adder.error_check(result_after_modulo, second_result_after_modulo)
 
 
     def multiply(self):
