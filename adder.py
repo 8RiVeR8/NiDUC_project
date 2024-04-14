@@ -24,9 +24,7 @@ class Add:
         return self.modulo._modulo_number
 
     def error_check(self, result, result_modulo):
-        result = int(result)
-        result_modulo = int(result_modulo)
-        if(result % self.modulo._modulo_number) == result_modulo:
+        if result == result_modulo:
             print("Nie wykryto błędu")
         else:
             print("Błąd został wykryty")
