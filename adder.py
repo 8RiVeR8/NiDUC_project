@@ -31,16 +31,18 @@ class Add:
 
     #dla |X| + |Y|
     def result_after_modulo_second(self, result):
+        # lenght = len(result)
         result = int(result, 2)
         result = result % self.modulo._modulo_number
-        result = bin(result)[2:]
+        # result = bin(result)[2:].zfill(lenght)
         return result
 
     # dla X+Y
     def result_after_modulo(self, result):
+        # lenght = len(result)
         result = int(result, 2)
         result = result % self.modulo._modulo_number
-        result = bin(result)[2:]
+        # result = bin(result)[2:].zfill(lenght)
         return result
 
     def get_error_variable(self):
@@ -116,8 +118,11 @@ class Add:
                 bin_x = self.generate_error(bin_x)
             elif error_variable == 2:
                 bin_y = self.generate_error(bin_y)
-            print("Czy chcesz wprowadzić błąd ponownie? -> (T/N): ")
-            again = input().upper()
+            if error_variable != None:
+                print("Czy chcesz wprowadzić błąd ponownie? -> (T/N): ")
+                again = input().upper()
+            elif error_variable == None:
+                again = 'N'
 
 
         for i in range(max_length - 1, -1, -1):

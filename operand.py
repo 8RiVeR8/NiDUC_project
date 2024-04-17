@@ -12,6 +12,7 @@ class Operand:
     def get_bin_number(self, name):
         print(f"Podaj liczbę binarną {name}:")
         self._char_list = list(input())
+        return self._char_list
 
     def get_modulo_number(self):
         while True:
@@ -23,8 +24,6 @@ class Operand:
                 break
 
     def get_char_list(self, sign):
-        #print("Podaj liczbę " + sign + ": ")
-        #self._char_list.append(list(input()))
         return self._char_list
 
     def get_rest_list(self):

@@ -40,8 +40,19 @@ class Main:
         self.adder.error_check(result_after_modulo, second_result_after_modulo)
 
 
-    def multiply(self):
-        self.multiply.run()
+    def multiply_number(self):
+        operand_x = Operand()
+        bin_x = operand_x.get_bin_number("X")
+
+        operand_y = Operand()
+        bin_y = operand_y.get_bin_number("Y")
+
+        self.multiply.number_x = bin_x
+        self.multiply.number_y = bin_y
+
+        print("Iloczyny częściowe: ")
+        for partial_product in self.multiply.binary_multiply(bin_x, bin_y):
+            print(partial_product, "<-")
 
     def auto_tests(self):
         self.auto_tests.run()
@@ -53,7 +64,7 @@ class Main:
             if choice == "1":
                 self.add_number()
             elif choice == "2":
-                self.multiply()
+                self.multiply_number()
             elif choice == "3":
                 self.auto_tests()
             elif choice == "4":
