@@ -119,7 +119,7 @@ class Add:
             elif error_variable == 2:
                 bin_y = self.generate_error(bin_y)
             if error_variable != None:
-                print("Czy chcesz wprowadzić błąd ponownie? -> (T/N): ")
+                print("Czy chcesz wprowadzić błąd ponownie? -> (t/n): ")
                 again = input().upper()
             elif error_variable == None:
                 again = 'N'

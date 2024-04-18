@@ -50,8 +50,12 @@ class Main:
         self.multiply.number_x = bin_x
         self.multiply.number_y = bin_y
 
+        partial_product = self.multiply.binary_multiply(bin_x, bin_y)
+
+        partial_products = self.multiply.get_error(partial_product)
+
         print("Iloczyny częściowe: ")
-        for partial_product in self.multiply.binary_multiply(bin_x, bin_y):
+        for partial_product in partial_products:
             print(partial_product, "<-")
 
     def auto_tests(self):
